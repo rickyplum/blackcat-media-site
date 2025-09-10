@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll + header offset */
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+
+/* ---------- Base tokens ---------- */
+@layer base {
+  :root {
+    --bg: 255 255 255;       /* white background */
+    --ink-900: #0f172a;      /* near-black text */
+    --ink-600: #475569;      /* muted copy */
+
+    /* cheerful brand colors */
+    --lemon: #FFE76A;
+    --coral: #FF7A7A;
+    --teal:  #5AD7C2;
+    --sky:   #8CCBFF;
+    --lilac: #C6A5FF;
+    --peach: #FFB08A;
+    --mint:  #B6F2A6;
+  }
+
+  body {
+    @apply bg-white text-[var(--ink-900)] antialiased font-sans;
+  }
+
+  /* Site-wide soft, colorful background layer */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -10% -10% 0 -10%;
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(60px) saturate(110%);
+    opacity: 0.35;
+    background:
+      radial-gradient(42% 38% at 10% 20%, var(--mint),  transparent 60%),
+      radial-gradient(35% 35% at 90% 15%, var(--sky),   transparent 65%),
+      radial-gradient(40% 38% at 15% 85%, var(--peach), transparent 60%),
+      radial-gradient(35% 35% at 85% 80%, var(--lilac), transparent 65%),
+      radial-gradient(28% 28% at 50% 40%, var(--lemon), transparent 70%),
+      radial-gradient(26% 26% at 60% 70%, var(--teal),  transparent 70%);
+  }
+}
+
+/* ---------- Components ---------- */
+@layer components {
+  /* Layout */
+  .container-max { @apply container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8; }
+  .section { @apply py-16 md:py-24; }
+  .section-head { @apply text-center max-w-2xl mx-auto; }
+  .lead { @apply text-lg text-ink-600; }
+  .kicker { @apply uppercase tracking-[0.18em] text-xs text-ink-600; }
+
+  /* Header */
+  .wordmark { @apply font-extrabold tracking-[0.18em]; }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center h-11 px-5 rounded-full text-sm font-semibold transition
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20;
+  }
+  .btn-primary {
+    @apply text-white hover:opacity-90;
+    background: linear-gradient(90deg, var(--lemon), var(--coral), var(--sky), var(--lilac));
+    background-size: 300% 100%;
+    animation: heroSlide 8s linear infinite;
+  }
+  .btn-ghost   { @apply bg-black/5 text-ink-900 hover:bg-black/10; }
+
+  /* Cards / Tiles */
+  .card { @apply rounded-3xl shadow-card bg-white; }
+
+  /* Colorful background blocks */
+  .block { @apply rounded-3xl p-8 md:p-10; }
+  .block--lemon { @apply bg-lemon; }
+  .block--coral { @apply bg-coral; }
+  .block--teal  { @apply bg-teal; }
+  .block--sky   { @apply bg-sky; }
+  .block--lilac { @apply bg-lilac; }
+  .block--peach { @apply bg-peach; }
+  .block--mint  { @apply bg-mint; }
+
+  /* Poster-style media */
+  .poster { @apply overflow-hidden rounded-3xl shadow-card; }
+  .poster img { @apply w-full h-full object-cover; }
+
+  /* Inputs */
+  .input {
+    @apply h-11 px-4 rounded-xl bg-white border border-black/10 shadow-soft
+           placeholder:text-ink-600 focus:ring-2 focus:ring-black/20;
+  }
+  .textarea {
+    @apply min-h-[120px] px-4 py-3 rounded-xl bg-white border border-black/10 shadow-soft
+           placeholder:text-ink-600 focus:ring-2 focus:ring-black/20;
+  }
+
+  /* Spotify embed */
+  .embed { border-radius: 16px; }
+
+  /* --- Flashy hero --- */
+  .hero-splash { @apply relative overflow-hidden; }
+
+  /* Soft color blobs with drift */
+  .hero-blob {
+    position: absolute;
+    filter: blur(40px);
+    opacity: 0.5;
+    pointer-events: none;
+    width: 520px;
+    height: 520px;
+    border-radius: 9999px;
+    animation: blobDrift 18s ease-in-out infinite alternate;
+  }
+  .hero-blob--left {
+    left: -140px;
+    top: -60px;
+    background: radial-gradient(circle at 30% 30%, var(--lemon), transparent 60%);
+    animation-delay: 0s;
+  }
+  .hero-blob--right {
+    right: -160px;
+    top: 40px;
+    background: radial-gradient(circle at 70% 40%, var(--teal), transparent 60%);
+    animation-delay: 6s;
+  }
+
+  /* Animated accent bar under headline */
+  .hero-accent {
+    height: 10px;
+    width: min(240px, 40%);
+    border-radius: 9999px;
+    background: linear-gradient(90deg, var(--lemon), var(--sky), var(--lilac), var(--coral));
+    background-size: 200% 100%;
+    animation: heroSlide 6s linear infinite;
+  }
+
+  /* FAQ styles */
+  .faq-item { @apply bg-white rounded-2xl border border-black/10 shadow-soft overflow-hidden; }
+  .faq-summary { @apply cursor-pointer flex items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold; }
+  .faq-content { @apply px-5 pb-5 pt-0 text-ink-600; }
+  .faq-caret { width: 20px; height: 20px; transition: transform .2s ease; }
+  .group[open] .faq-caret { transform: rotate(180deg); }
+  .faq-item:hover .faq-summary { @apply bg-black/[0.03]; }
+  .faq-summary:focus-visible { @apply outline-none ring-2 ring-black/15 rounded-2xl; }
+
+  /* Shared look for the sticker motif */
+  .sticker {
+    pointer-events: none;
+    user-select: none;
+    filter: saturate(95%) contrast(105%);
+  }
+}
+
+/* ---------- Utilities ---------- */
+@layer utilities {
+  /* Gradient headline text (animated) */
+  .text-gradient {
+    background: linear-gradient(
+      90deg,
+      var(--lemon),
+      var(--coral),
+      var(--sky),
+      var(--lilac),
+      var(--peach),
+      var(--mint)
+    );
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    animation: heroSlide 10s linear infinite;
+  }
+
+  /* Gradient section titles */
+  .title-gradient {
+    background: linear-gradient(90deg, var(--coral), var(--sky), var(--lilac), var(--mint));
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+  }
+
+  /* Optional gradient chip */
+  .chip-gradient {
+    @apply text-xs font-semibold px-3 py-1 rounded-full text-white;
+    background: linear-gradient(90deg, var(--peach), var(--mint), var(--sky));
+  }
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes heroSlide {
+  0%   { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes blobDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(30px, -20px) scale(1.05); }
+  100% { transform: translate(-20px, 25px) scale(0.98); }
+}
