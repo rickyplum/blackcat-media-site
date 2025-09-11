@@ -3,6 +3,10 @@ import React, { useEffect, useRef, useState } from "react";
 const SPOTIFY_EMBED_URL =
   "https://open.spotify.com/embed/show/3i7DxU0YyDnaMVdDrF4fpG?utm_source=generator&theme=0";
 
+// Pre-filled mailto link (subject + body)
+const MAILTO_LINK =
+  "mailto:contact@blackcat.fm?subject=Blackcat%20Media%20Inquiry&body=Hi%20Blackcat%20team,%0D%0A%0D%0A";
+
 function useParallax(mult = 0.06) {
   const [y, setY] = useState(0);
   const ticking = useRef(false);
@@ -342,7 +346,7 @@ function FAQ() {
   );
 }
 
-/* ---------------- Contact (restored) ---------------- */
+/* ---------------- Contact (updated with email button) ---------------- */
 function Contact() {
   const onSubmit = (e) => {
     e.preventDefault();
@@ -360,6 +364,17 @@ function Contact() {
           </h2>
           <p className="lead mt-3">
             Tell us about your campaign or show. We’ll respond quickly.
+          </p>
+
+          {/* Inline direct email link */}
+          <p className="mt-4 text-sm text-ink-600">
+            Prefer email?{" "}
+            <a
+              href="mailto:contact@blackcat.fm"
+              className="font-semibold underline underline-offset-4 hover:no-underline"
+            >
+              contact@blackcat.fm
+            </a>
           </p>
         </header>
 
@@ -390,6 +405,13 @@ function Contact() {
           />
           <button type="submit" className="btn btn-primary">Send</button>
         </form>
+
+        {/* Email button with prefilled subject/body */}
+        <div className="mt-6 text-center">
+          <a href={MAILTO_LINK} className="btn btn-ghost">
+            Email us directly
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -421,7 +443,7 @@ export default function App() {
       <Shows />
       <About />
       <FAQ />
-      <Contact /> {/* 👈 Restored Contact section */}
+      <Contact />
       <Footer />
     </div>
   );
