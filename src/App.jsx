@@ -1,11 +1,8 @@
+// src/App.jsx
 import React, { useEffect, useRef, useState } from "react";
 
 const SPOTIFY_EMBED_URL =
   "https://open.spotify.com/embed/show/3i7DxU0YyDnaMVdDrF4fpG?utm_source=generator&theme=0";
-
-// Pre-filled mailto link (subject + body)
-const MAILTO_LINK =
-  "mailto:contact@blackcat.fm?subject=Blackcat%20Media%20Inquiry&body=Hi%20Blackcat%20team,%0D%0A%0D%0A";
 
 function useParallax(mult = 0.06) {
   const [y, setY] = useState(0);
@@ -223,7 +220,7 @@ function FAQ() {
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 title-gradient">
             Questions, answered.
           </h2>
-          <p className="lead mt-3">
+        <p className="lead mt-3">
             Here’s the quick version of how Blackcat works with creators and partners.
           </p>
         </header>
@@ -346,13 +343,12 @@ function FAQ() {
   );
 }
 
-/* ---------------- Contact (updated with email button) ---------------- */
+/* ---------------- Contact (Formspree) ---------------- */
 function Contact() {
-  const onSubmit = (e) => {
-    e.preventDefault();
-    // No backend yet — you can hook this up to your form service later.
-    alert("Thanks! We’ll be in touch shortly.");
-  };
+  // Optional: show a small success banner when redirected back with ?sent=1
+  const sent =
+    typeof window !== "undefined" &&
+    (window.location.hash.includes("sent=1") || window.location.search.includes("sent=1"));
 
   return (
     <section id="contact" className="section">
@@ -378,7 +374,19 @@ function Contact() {
           </p>
         </header>
 
-        <form onSubmit={onSubmit} className="mt-10 grid gap-4 max-w-xl mx-auto">
+        {/* Success message after redirect */}
+        {sent && (
+          <div className="mt-6 mx-auto max-w-xl rounded-xl border border-black/10 bg-white p-4 text-sm text-ink-700 shadow-sm">
+            Thanks! Your message was sent — we’ll be in touch shortly.
+          </div>
+        )}
+
+        {/* POST straight to Formspree */}
+        <form
+          action="https://formspree.io/f/movnrbrz"
+          method="POST"
+          className="mt-10 grid gap-4 max-w-xl mx-auto"
+        >
           <input
             className="h-11 px-4 rounded-xl bg-white border border-black/10 shadow-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-black/20"
             placeholder="Your name"
@@ -403,12 +411,23 @@ function Contact() {
             name="message"
             required
           />
+
+          {/* Optional extras */}
+          <input type="hidden" name="_subject" value="Blackcat Media Inquiry" />
+          {/* Redirect back to your site with a success flag */}
+          <input type="hidden" name="_redirect" value="https://blackcat.fm/#contact?sent=1" />
+          {/* Honeypot field (spam trap) */}
+          <input type="text" name="_gotcha" className="hidden" tabIndex="-1" autoComplete="off" />
+
           <button type="submit" className="btn btn-primary">Send</button>
         </form>
 
-        {/* Email button with prefilled subject/body */}
+        {/* Email button fallback */}
         <div className="mt-6 text-center">
-          <a href={MAILTO_LINK} className="btn btn-ghost">
+          <a
+            href="mailto:contact@blackcat.fm?subject=Blackcat%20Media%20Inquiry&body=Hi%20Blackcat%20team,%0D%0A%0D%0A"
+            className="btn btn-ghost"
+          >
             Email us directly
           </a>
         </div>
