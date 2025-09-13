@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 const SPOTIFY_EMBED_URL =
   "https://open.spotify.com/embed/show/3i7DxU0YyDnaMVdDrF4fpG?utm_source=generator&theme=0";
+const RESIDUE_EMBED_URL =
+  "https://open.spotify.com/embed/show/69rVpBKK6Y8hMnYCCsfw1Y?utm_source=generator&theme=0";
 
 function useParallax(mult = 0.06) {
   const [y, setY] = useState(0);
@@ -140,20 +142,41 @@ function Shows() {
             </div>
           </article>
 
-          {/* Coming Soon card */}
+          {/* Residue: A True Crime Podcast (replaces Coming Soon) */}
           <article className="card overflow-hidden">
-            <div className="block block--sky p-0">
-              <div className="aspect-square rounded-3xl bg-white/50" />
+            <div className="block block--lilac p-0">
+              <img
+                src="/images/residue-art.png"
+                alt="Residue: A True Crime Podcast"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
             </div>
             <div className="p-5">
-              <h3 className="text-lg font-semibold">Coming Soon</h3>
+              <h3 className="text-lg font-semibold">Residue: A True Crime Podcast</h3>
               <p className="text-sm text-ink-600 mt-1">
-                A new show is on the way. Stay tuned.
+                A new true-crime series digging into what’s left behind.
               </p>
+
+              <div className="mt-4">
+                <iframe
+                  title="Spotify — Residue (show)"
+                  src={RESIDUE_EMBED_URL}
+                  className="embed"
+                  width="100%"
+                  height="232"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="mt-4">
+                <a href="#contact" className="btn btn-primary">Advertise</a>
+              </div>
             </div>
           </article>
 
-          {/* Work with us card */}
+          {/* Work with us */}
           <article className="card overflow-hidden">
             <div className="block block--mint p-0">
               <div className="aspect-square rounded-3xl bg-white/50 flex items-center justify-center text-lg font-semibold text-ink-600">
@@ -220,7 +243,7 @@ function FAQ() {
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 title-gradient">
             Questions, answered.
           </h2>
-        <p className="lead mt-3">
+          <p className="lead mt-3">
             Here’s the quick version of how Blackcat works with creators and partners.
           </p>
         </header>
@@ -345,7 +368,6 @@ function FAQ() {
 
 /* ---------------- Contact (Formspree) ---------------- */
 function Contact() {
-  // Optional: show a small success banner when redirected back with ?sent=1
   const sent =
     typeof window !== "undefined" &&
     (window.location.hash.includes("sent=1") || window.location.search.includes("sent=1"));
@@ -361,8 +383,6 @@ function Contact() {
           <p className="lead mt-3">
             Tell us about your campaign or show. We’ll respond quickly.
           </p>
-
-          {/* Inline direct email link */}
           <p className="mt-4 text-sm text-ink-600">
             Prefer email?{" "}
             <a
@@ -374,14 +394,12 @@ function Contact() {
           </p>
         </header>
 
-        {/* Success message after redirect */}
         {sent && (
           <div className="mt-6 mx-auto max-w-xl rounded-xl border border-black/10 bg-white p-4 text-sm text-ink-700 shadow-sm">
             Thanks! Your message was sent — we’ll be in touch shortly.
           </div>
         )}
 
-        {/* POST straight to Formspree */}
         <form
           action="https://formspree.io/f/movnrbrz"
           method="POST"
@@ -412,17 +430,13 @@ function Contact() {
             required
           />
 
-          {/* Optional extras */}
           <input type="hidden" name="_subject" value="Blackcat Media Inquiry" />
-          {/* Redirect back to your site with a success flag */}
           <input type="hidden" name="_redirect" value="https://blackcat.fm/#contact?sent=1" />
-          {/* Honeypot field (spam trap) */}
           <input type="text" name="_gotcha" className="hidden" tabIndex="-1" autoComplete="off" />
 
           <button type="submit" className="btn btn-primary">Send</button>
         </form>
 
-        {/* Email button fallback */}
         <div className="mt-6 text-center">
           <a
             href="mailto:contact@blackcat.fm?subject=Blackcat%20Media%20Inquiry&body=Hi%20Blackcat%20team,%0D%0A%0D%0A"
