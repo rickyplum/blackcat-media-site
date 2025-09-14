@@ -1,11 +1,13 @@
 // src/App.jsx
 import React, { useEffect, useRef, useState } from "react";
 
+/* ---------- Constants ---------- */
 const SPOTIFY_EMBED_URL =
   "https://open.spotify.com/embed/show/3i7DxU0YyDnaMVdDrF4fpG?utm_source=generator&theme=0";
 const RESIDUE_EMBED_URL =
   "https://open.spotify.com/embed/show/69rVpBKK6Y8hMnYCCsfw1Y?utm_source=generator&theme=0";
 
+/* ---------- Hooks ---------- */
 function useParallax(mult = 0.06) {
   const [y, setY] = useState(0);
   const ticking = useRef(false);
@@ -42,6 +44,8 @@ function Header() {
         <nav className="hidden sm:flex items-center gap-8 text-sm">
           <a href="#shows" className="hover:underline underline-offset-4">Shows</a>
           <a href="#about" className="hover:underline underline-offset-4">About</a>
+          <a href="#how" className="hover:underline underline-offset-4">How it works</a>
+          <a href="#join" className="hover:underline underline-offset-4">Join</a>
           <a href="#faq" className="hover:underline underline-offset-4">FAQ</a>
           <a href="#contact" className="hover:underline underline-offset-4">Contact</a>
         </nav>
@@ -70,22 +74,20 @@ function Hero() {
       </div>
 
       <div className="container-max text-center relative">
-        <p className="kicker">Podcast Network</p>
+        <p className="kicker">Creator-First Podcast Network</p>
 
         <h1 className="mt-3 text-5xl md:text-6xl font-extrabold leading-[1.05]">
-          <span className="text-gradient">Stories that stick.</span>
+          <span className="text-gradient">BLACKCAT</span>
         </h1>
 
         <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
 
         <p className="lead mt-6 max-w-2xl mx-auto">
-          Independent shows. Real fans. Ads that actually land.
+          BLACKCAT helps indie podcasters grow, monetize, and connect—without giving up ownership.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3 justify-center">
-          <a href="#shows" className="btn btn-primary">Explore shows</a>
-          <a href="#contact" className="btn btn-ghost">Advertise</a>
-          <a href="#contact" className="btn btn-ghost">Work with us</a>
+          <a href="#join" className="btn btn-primary">Join the Network</a>
         </div>
       </div>
     </section>
@@ -142,7 +144,7 @@ function Shows() {
             </div>
           </article>
 
-          {/* Residue: A True Crime Podcast (replaces Coming Soon) */}
+          {/* Residue: A True Crime Podcast */}
           <article className="card overflow-hidden">
             <div className="block block--lilac p-0">
               <img
@@ -154,7 +156,7 @@ function Shows() {
             <div className="p-5">
               <h3 className="text-lg font-semibold">Residue: A True Crime Podcast</h3>
               <p className="text-sm text-ink-600 mt-1">
-                A new true-crime series digging into what’s left behind.
+                A true-crime series digging into what’s left behind.
               </p>
 
               <div className="mt-4">
@@ -178,18 +180,23 @@ function Shows() {
 
           {/* Work with us */}
           <article className="card overflow-hidden">
-            <div className="block block--mint p-0">
-              <div className="aspect-square rounded-3xl bg-white/50 flex items-center justify-center text-lg font-semibold text-ink-600">
-                Join Us
-              </div>
+           <div className="block block--sky p-0">
+            <div className="aspect-square rounded-3xl bg-white/80 flex items-center justify-center overflow-hidden">
+              <img
+                src="/images/blackcat-sticker.png"
+                alt="Coming Soon — Blackcat"
+                className="w-3/4 max-w-[360px] object-contain opacity-90 rotate-6"
+              />
             </div>
+          </div>
+
             <div className="p-5">
               <h3 className="text-lg font-semibold">Work with us</h3>
               <p className="text-sm text-ink-600 mt-1">
                 Want to launch a podcast? Join the BLACKCAT network and grow with us.
               </p>
               <div className="mt-4">
-                <a href="#contact" className="btn btn-primary">Get in touch</a>
+                <a href="#join" className="btn btn-primary">Get in touch</a>
               </div>
             </div>
           </article>
@@ -199,23 +206,179 @@ function Shows() {
   );
 }
 
-/* ---------------- About ---------------- */
+/* ---------- Small helper for feature panels ---------- */
+function Feature({ title, children }) {
+  return (
+    <div className="h-full rounded-2xl bg-white/95 ring-1 ring-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-5 md:p-6">
+      <h3 className="text-base font-semibold leading-tight">{title}</h3>
+      {children && (
+        <p className="mt-2 text-sm leading-relaxed text-ink-700">{children}</p>
+      )}
+    </div>
+  );
+}
+
+/* ---------------- About (refined) ---------------- */
 function About() {
   return (
     <section id="about" className="section">
       <div className="container-max">
-        <header className="section-head">
+        <header className="section-head text-center">
           <p className="kicker">About</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 title-gradient">
-            Colorful stories, simple ideas
+          <h2
+            className="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 title-gradient"
+            style={{ textWrap: "balance" }}
+          >
+            What is BLACKCAT?
           </h2>
-          <p className="lead mt-3">
-            Blackcat is a podcast network built for independent creators.
-            We focus on shows that people recommend to their friends —
-            and help brands connect with those audiences through thoughtful,
-            host-read ads.
+        <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
+          <p className="lead mt-6 max-w-3xl mx-auto">
+            BLACKCAT is a creator-first podcast network built to empower independent shows.
+            We provide free hosting, monetization tools, and community support while keeping
+            creators 100% in control of their IP.
           </p>
         </header>
+
+        {/* Why BLACKCAT — feature grid */}
+        <div className="mt-10 max-w-5xl mx-auto">
+          <h3 className="text-lg font-semibold mb-4">Why BLACKCAT?</h3>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+            <Feature title="80% revenue to podcasters">
+              Compared with the industry’s 40%+ take.
+            </Feature>
+
+            <Feature title="Flexible 3-month agreements">
+              Keep terms light and creator-friendly.
+            </Feature>
+
+            <Feature title="Free hosting on Art19">
+              Amazon-owned, industry-leading platform with advanced analytics.
+            </Feature>
+
+            <Feature title="Net-30 payments">
+              Paid by direct deposit on a predictable schedule.
+            </Feature>
+
+            <Feature title="Full creative control & ownership">
+              You keep your IP and call the shots.
+            </Feature>
+
+            <Feature title="Pretty awesome & cool">
+              Independent, colorful, and human. We answer fast, work hard, and treat creators like partners—not inventory.
+            </Feature>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Small helper for numbered steps ---------- */
+function Step({ n, title, children }) {
+  return (
+    <div className="h-full rounded-2xl bg-white/95 ring-1 ring-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-5 md:p-6 flex flex-col">
+      <div className="flex items-center gap-3">
+        <span className="inline-flex h-7 w-7 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-full bg-black text-white text-[11px] md:text-xs font-bold">
+          {n}
+        </span>
+        <h3 className="text-sm md:text-base font-semibold leading-tight">{title}</h3>
+      </div>
+      <p className="mt-3 text-sm leading-relaxed text-ink-700">
+        {children}
+      </p>
+    </div>
+  );
+}
+
+/* ---------------- How It Works (clean) ---------------- */
+function HowItWorks() {
+  return (
+    <section id="how" className="section">
+      <div className="container-max">
+        <header className="section-head text-center">
+          <p className="kicker">How it works</p>
+          <h2
+            className="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 title-gradient"
+            style={{ textWrap: "balance" }}
+          >
+            Simple, fair, creator-first
+          </h2>
+          <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
+        </header>
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+          <Step n="1" title="Host for Free">
+            We cover hosting on Art19, with advanced analytics, dynamic ad control,
+            and private creator logins.
+          </Step>
+
+          <Step n="2" title="Monetize Responsibly">
+            Start with simple dynamic ads so you earn while keeping listeners happy.
+          </Step>
+
+          <Step n="3" title="Grow Together">
+            Cross-promotion inside the network gets your show in front of new listeners.
+          </Step>
+
+          <Step n="4" title="Get Support">
+            We handle migrations, ad setup, and share guides, resources, and a private
+            Slack community.
+          </Step>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* --------------- Join the Network (clean) --------------- */
+function Join() {
+  return (
+    <section id="join" className="section">
+      <div className="container-max">
+        <header className="section-head text-center">
+          <p className="kicker">Join the Network</p>
+          <h2
+            className="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 title-gradient"
+            style={{ textWrap: "balance" }}
+          >
+            A fair deal for independent creators
+          </h2>
+          <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
+        </header>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2 max-w-5xl mx-auto items-stretch">
+          <div className="rounded-2xl bg-white/95 ring-1 ring-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-6">
+            <h3 className="text-lg font-semibold">Our Philosophy</h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink-700">
+              No IP grabs. No long contracts. No forced branding. BLACKCAT exists to:
+            </p>
+            <ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-ink-700 space-y-2 marker:text-ink-300">
+              <li>Empower creators to own their content.</li>
+              <li>Foster collaboration over competition.</li>
+              <li>Provide a fair launchpad for sustainable growth.</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl bg-white/95 ring-1 ring-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-6">
+            <h3 className="text-lg font-semibold">The Future</h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink-700">
+              We’re building toward original productions and larger sales partnerships.
+              Right now, we’re focused on community, growth, and giving creators a fair deal.
+            </p>
+            <ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-ink-700 space-y-2 marker:text-ink-300">
+              <li>Original productions on the roadmap.</li>
+              <li>Partner sales to increase fill and CPMs.</li>
+              <li>Always creator-first terms.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-8 text-center">
+          <a href="#contact" className="btn btn-primary">
+            Apply to Join BLACKCAT
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -272,8 +435,8 @@ function FAQ() {
             </summary>
             <div className="faq-content">
               Nope. No minimum is required to join. For context, shows under ~50k
-              monthly impressions typically see lighter direct (host-read) demand,
-              but we can still monetize programmatically and help you grow.
+              monthly impressions typically see lighter direct demand, but we can
+              still monetize programmatically and help you grow.
             </div>
           </details>
 
@@ -475,6 +638,8 @@ export default function App() {
       <Hero />
       <Shows />
       <About />
+      <HowItWorks />
+      <Join />
       <FAQ />
       <Contact />
       <Footer />
