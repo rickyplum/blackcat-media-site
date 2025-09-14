@@ -109,7 +109,8 @@ function Shows() {
           </p>
         </header>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Keep 2 columns until xl to avoid Spotify scrollbar squeeze at ~1024px */}
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {/* Crime Salad */}
           <article className="card overflow-hidden">
             <div className="block block--lemon p-0">
@@ -126,12 +127,13 @@ function Shows() {
               </p>
 
               <div className="mt-4">
+                {/* Spotify show embed, recommended 352px height */}
                 <iframe
                   title="Spotify — Crime Salad (show)"
                   src={SPOTIFY_EMBED_URL}
                   className="embed"
                   width="100%"
-                  height="232"
+                  height="352"
                   frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
@@ -160,12 +162,13 @@ function Shows() {
               </p>
 
               <div className="mt-4">
+                {/* Spotify show embed, recommended 352px height */}
                 <iframe
                   title="Spotify — Residue (show)"
                   src={RESIDUE_EMBED_URL}
                   className="embed"
                   width="100%"
-                  height="232"
+                  height="352"
                   frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
@@ -180,16 +183,11 @@ function Shows() {
 
           {/* Work with us */}
           <article className="card overflow-hidden">
-           <div className="block block--sky p-0">
-            <div className="aspect-square rounded-3xl bg-white/80 flex items-center justify-center overflow-hidden">
-              <img
-                src="/images/blackcat-sticker.png"
-                alt="Coming Soon — Blackcat"
-                className="w-3/4 max-w-[360px] object-contain opacity-90 rotate-6"
-              />
+            <div className="block block--mint p-0">
+              <div className="aspect-square rounded-3xl bg-white/50 flex items-center justify-center text-lg font-semibold text-ink-600">
+                Join Us
+              </div>
             </div>
-          </div>
-
             <div className="p-5">
               <h3 className="text-lg font-semibold">Work with us</h3>
               <p className="text-sm text-ink-600 mt-1">
@@ -231,7 +229,7 @@ function About() {
           >
             What is BLACKCAT?
           </h2>
-        <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
+          <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
           <p className="lead mt-6 max-w-3xl mx-auto">
             BLACKCAT is a creator-first podcast network built to empower independent shows.
             We provide free hosting, monetization tools, and community support while keeping
@@ -265,7 +263,7 @@ function About() {
             </Feature>
 
             <Feature title="Pretty awesome & cool">
-              Independent, colorful, and human. We answer fast, work hard, and treat creators like partners—not inventory.
+              Independent, colorful, and human. We answer fast, ship quickly, and treat creators like partners—not inventory.
             </Feature>
           </div>
         </div>
@@ -314,7 +312,8 @@ function HowItWorks() {
           </Step>
 
           <Step n="2" title="Monetize Responsibly">
-            Start with simple dynamic ads so you earn while keeping listeners happy.
+            Start with simple dynamic ads (we recommend 1 pre-roll and 1 post-roll)
+            so you earn while keeping listeners happy.
           </Step>
 
           <Step n="3" title="Grow Together">
@@ -323,7 +322,7 @@ function HowItWorks() {
 
           <Step n="4" title="Get Support">
             We handle migrations, ad setup, and share guides, resources, and a private
-            Slack community.
+            Slack/Discord community.
           </Step>
         </div>
       </div>
