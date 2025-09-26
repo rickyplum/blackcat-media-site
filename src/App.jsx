@@ -3,9 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 
 /* ---------- Constants ---------- */
 const SPOTIFY_EMBED_URL =
-  "https://open.spotify.com/embed/show/3i7DxU0YyDnaMVdDrF4fpG?utm_source=generator&theme=0";
+  "https://open.spotify.com/embed/show/3i7DxU0YyDnaMVdDrF4fpG?utm_source=generator&theme=0"; // Crime Salad
 const RESIDUE_EMBED_URL =
-  "https://open.spotify.com/embed/show/69rVpBKK6Y8hMnYCCsfw1Y?utm_source=generator&theme=0";
+  "https://open.spotify.com/embed/show/69rVpBKK6Y8hMnYCCsfw1Y?utm_source=generator&theme=0"; // Residue
+const JANE_EMBED_URL =
+  "https://open.spotify.com/embed/show/22CbW5HOVlWlZmNJhY7Nrz?utm_source=generator&theme=0"; // She Goes By Jane
 
 /* ---------- Hooks ---------- */
 function useParallax(mult = 0.06) {
@@ -181,6 +183,48 @@ function Shows() {
             </div>
           </article>
 
+          {/* She Goes By Jane */}
+          <article className="card overflow-hidden">
+            <div className="block block--rose p-0">
+              <img
+                src="/images/she-goes-by-jane-art.jpg"
+                alt="She Goes By Jane"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold">She Goes By Jane</h3>
+              <p className="text-sm text-ink-600 mt-1">
+                Unresolved stories of missing and murdered women.
+              </p>
+
+              <div className="mt-4">
+                {/* Spotify show embed, recommended 352px height */}
+                <iframe
+                  title="Spotify — She Goes By Jane (show)"
+                  src={JANE_EMBED_URL}
+                  className="embed"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="mt-4">
+                <a
+                  href="https://open.spotify.com/show/22CbW5HOVlWlZmNJhY7Nrz?si=9137352a53324ff7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  Listen on Spotify
+                </a>
+              </div>
+            </div>
+          </article>
+
           {/* Work with us */}
           <article className="card overflow-hidden">
             <div className="block block--mint p-0">
@@ -229,13 +273,15 @@ function About() {
           >
             What is BLACKCAT?
           </h2>
-          <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
-          <p className="lead mt-6 max-w-3xl mx-auto">
-            BLACKCAT is a creator-first podcast network built to empower independent shows.
-            We provide free hosting, monetization tools, and community support while keeping
-            creators 100% in control of their IP.
-          </p>
         </header>
+
+        <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
+
+        <p className="lead mt-6 max-w-3xl mx-auto">
+          BLACKCAT is a creator-first podcast network built to empower independent shows.
+          We provide free hosting, monetization tools, and community support while keeping
+          creators 100% in control of their IP.
+        </p>
 
         {/* Why BLACKCAT — feature grid */}
         <div className="mt-10 max-w-5xl mx-auto">
