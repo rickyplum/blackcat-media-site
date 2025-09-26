@@ -85,7 +85,7 @@ function Hero() {
         <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
 
         <p className="lead mt-6 max-w-2xl mx-auto">
-          BLACKCAT helps indie podcasters grow, monetize, and connect—without giving up ownership.
+          We help indie podcasters grow, make money, and find their audience without giving up ownership.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3 justify-center">
@@ -107,11 +107,10 @@ function Shows() {
             Now Playing
           </h2>
           <p className="lead mt-3">
-            Start with the latest episode — then explore the catalog.
+            Start with the newest episode, then dig through the back catalog.
           </p>
         </header>
 
-        {/* Keep 2 columns until xl to avoid Spotify scrollbar squeeze at ~1024px */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {/* Crime Salad */}
           <article className="card overflow-hidden">
@@ -125,11 +124,10 @@ function Shows() {
             <div className="p-5">
               <h3 className="text-lg font-semibold">Crime Salad</h3>
               <p className="text-sm text-ink-600 mt-1">
-                Victim-focused true crime with Ashley & Ricky.
+                Victim-focused true crime with Ashley and Ricky.
               </p>
 
               <div className="mt-4">
-                {/* Spotify show embed, recommended 352px height */}
                 <iframe
                   title="Spotify — Crime Salad (show)"
                   src={SPOTIFY_EMBED_URL}
@@ -160,11 +158,10 @@ function Shows() {
             <div className="p-5">
               <h3 className="text-lg font-semibold">Residue: A True Crime Podcast</h3>
               <p className="text-sm text-ink-600 mt-1">
-                A true-crime series digging into what’s left behind.
+                What’s left behind after the headlines fade.
               </p>
 
               <div className="mt-4">
-                {/* Spotify show embed, recommended 352px height */}
                 <iframe
                   title="Spotify — Residue (show)"
                   src={RESIDUE_EMBED_URL}
@@ -199,7 +196,6 @@ function Shows() {
               </p>
 
               <div className="mt-4">
-                {/* Spotify show embed, recommended 352px height */}
                 <iframe
                   title="Spotify — She Goes By Jane (show)"
                   src={JANE_EMBED_URL}
@@ -235,7 +231,7 @@ function Shows() {
             <div className="p-5">
               <h3 className="text-lg font-semibold">Work with us</h3>
               <p className="text-sm text-ink-600 mt-1">
-                Want to launch a podcast? Join the BLACKCAT network and grow with us.
+                Launch a podcast or move an existing show. Grow with BLACKCAT.
               </p>
               <div className="mt-4">
                 <a href="#join" className="btn btn-primary">Get in touch</a>
@@ -260,7 +256,7 @@ function Feature({ title, children }) {
   );
 }
 
-/* ---------------- About (refined) ---------------- */
+/* ---------------- About ---------------- */
 function About() {
   return (
     <section id="about" className="section">
@@ -278,38 +274,35 @@ function About() {
         <div className="hero-accent mt-5 mx-auto" aria-hidden="true" />
 
         <p className="lead mt-6 max-w-3xl mx-auto">
-          BLACKCAT is a creator-first podcast network built to empower independent shows.
-          We provide free hosting, monetization tools, and community support while keeping
-          creators 100% in control of their IP.
+          BLACKCAT is a small, friendly network for independent shows. We cover hosting and ad tools, and we help with growth and community. You keep full ownership of your work.
         </p>
 
-        {/* Why BLACKCAT — feature grid */}
         <div className="mt-10 max-w-5xl mx-auto">
-          <h3 className="text-lg font-semibold mb-4">Why BLACKCAT?</h3>
+          <h3 className="text-lg font-semibold mb-4">Why creators join</h3>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
             <Feature title="80% revenue to podcasters">
-              Compared with the industry’s 40%+ take.
+              A better split than the usual big-network cut.
             </Feature>
 
             <Feature title="Flexible 3-month agreements">
-              Keep terms light and creator-friendly.
+              Short terms that respect your independence.
             </Feature>
 
             <Feature title="Free hosting on Art19">
-              Amazon-owned, industry-leading platform with advanced analytics.
+              Solid analytics and dynamic ad tools with no extra platform fees.
             </Feature>
 
             <Feature title="Net-30 payments">
-              Paid by direct deposit on a predictable schedule.
+              Direct deposit on a regular schedule.
             </Feature>
 
-            <Feature title="Full creative control & ownership">
-              You keep your IP and call the shots.
+            <Feature title="You keep your IP">
+              Full control. Your show stays yours.
             </Feature>
 
-            <Feature title="Pretty awesome & cool">
-              Independent, colorful, and human. We answer fast, work hard, and treat creators like partners—not inventory.
+            <Feature title="Indie spirit">
+              Real people who answer fast and treat you like a partner.
             </Feature>
           </div>
         </div>
@@ -335,7 +328,7 @@ function Step({ n, title, children }) {
   );
 }
 
-/* ---------------- How It Works (clean) ---------------- */
+/* ---------------- How It Works ---------------- */
 function HowItWorks() {
   return (
     <section id="how" className="section">
@@ -352,23 +345,20 @@ function HowItWorks() {
         </header>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
-          <Step n="1" title="Host for Free">
-            We cover hosting on Art19, with advanced analytics, dynamic ad control,
-            and private creator logins.
+          <Step n="1" title="Host for free">
+            We set you up on Art19 with analytics, dynamic ad controls, and your own login.
           </Step>
 
-          <Step n="2" title="Monetize Responsibly">
-            Start with simple dynamic ads (we recommend 1 pre-roll and 1 post-roll)
-            so you earn while keeping listeners happy.
+          <Step n="2" title="Turn on monetization">
+            Start with programmatic ads so you earn while you grow.
           </Step>
 
-          <Step n="3" title="Grow Together">
-            Cross-promotion inside the network gets your show in front of new listeners.
+          <Step n="3" title="Grow together">
+            Cross-promos inside the network help new listeners find you.
           </Step>
 
-          <Step n="4" title="Get Support">
-            We handle migrations, ad setup, and share guides, resources, and a private
-            Slack/Discord community.
+          <Step n="4" title="Get support">
+            We help with migrations, ad setup, best practices, and a private community space.
           </Step>
         </div>
       </div>
@@ -376,7 +366,7 @@ function HowItWorks() {
   );
 }
 
-/* --------------- Join the Network (clean) --------------- */
+/* --------------- Join the Network --------------- */
 function Join() {
   return (
     <section id="join" className="section">
@@ -394,27 +384,26 @@ function Join() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 max-w-5xl mx-auto items-stretch">
           <div className="rounded-2xl bg-white/95 ring-1 ring-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-6">
-            <h3 className="text-lg font-semibold">Our Philosophy</h3>
+            <h3 className="text-lg font-semibold">Our approach</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-700">
               No IP grabs. No long contracts. No forced branding. BLACKCAT exists to:
             </p>
             <ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-ink-700 space-y-2 marker:text-ink-300">
-              <li>Empower creators to own their content.</li>
-              <li>Foster collaboration over competition.</li>
-              <li>Provide a fair launchpad for sustainable growth.</li>
+              <li>Help creators keep control of their work.</li>
+              <li>Grow through collaboration, not competition.</li>
+              <li>Build steady, sustainable momentum.</li>
             </ul>
           </div>
 
           <div className="rounded-2xl bg-white/95 ring-1 ring-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-6">
-            <h3 className="text-lg font-semibold">The Future</h3>
+            <h3 className="text-lg font-semibold">What’s ahead</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-700">
-              We’re building toward original productions and larger sales partnerships.
-              Right now, we’re focused on community, growth, and giving creators a fair deal.
+              We’re working toward originals and bigger sales partnerships. Today we’re focused on community, growth, and fair terms.
             </p>
             <ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-ink-700 space-y-2 marker:text-ink-300">
               <li>Original productions on the roadmap.</li>
-              <li>Partner sales to increase fill and CPMs.</li>
-              <li>Always creator-first terms.</li>
+              <li>Partner sales to lift fill and CPM.</li>
+              <li>Always creator-first deals.</li>
             </ul>
           </div>
         </div>
@@ -433,7 +422,6 @@ function Join() {
 function FAQ() {
   return (
     <section id="faq" className="section relative overflow-hidden">
-      {/* Cat sticker peek */}
       <div
         className="hidden md:block absolute left-[-60px] top-1/3 opacity-15 -rotate-6"
         aria-hidden="true"
@@ -449,25 +437,23 @@ function FAQ() {
         <header className="section-head">
           <p className="kicker">FAQ</p>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 title-gradient">
-            Questions, answered.
+            Questions, answered
           </h2>
           <p className="lead mt-3">
-            Here’s the quick version of how Blackcat works with creators and partners.
+            Here’s the quick version of how BLACKCAT works with creators and partners.
           </p>
         </header>
 
         <div className="mt-10 faq grid gap-3 max-w-3xl mx-auto">
           <details className="faq-item group">
             <summary className="faq-summary">
-              <span>What is Blackcat?</span>
+              <span>What is BLACKCAT?</span>
               <svg className="faq-caret" viewBox="0 0 24 24" fill="none">
                 <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </summary>
             <div className="faq-content">
-              Blackcat is a creator-first audio network. We support shows people
-              actually recommend — and help brands join the conversation with
-              thoughtful, host-read placements.
+              A small audio network that helps good shows grow. We support the pods people actually recommend, and we help brands join in with thoughtful host-read ads.
             </div>
           </details>
 
@@ -479,22 +465,19 @@ function FAQ() {
               </svg>
             </summary>
             <div className="faq-content">
-              Nope. No minimum is required to join. For context, shows under ~50k
-              monthly impressions typically see lighter direct demand, but we can
-              still monetize programmatically and help you grow.
+              No minimum required. For context, shows under about 50k monthly impressions see lighter direct demand, but we can still monetize with programmatic and help you grow.
             </div>
           </details>
 
           <details className="faq-item group">
             <summary className="faq-summary">
-              <span>What’s Blackcat’s cut?</span>
+              <span>What’s BLACKCAT’s cut?</span>
               <svg className="faq-caret" viewBox="0 0 24 24" fill="none">
                 <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </summary>
             <div className="faq-content">
-              In most cases, we take <strong>20–25%</strong>. It’s transparent and a
-              little leaner than what’s typical in the industry.
+              In most cases, 20–25%. Clear and lean compared to big networks.
             </div>
           </details>
 
@@ -506,9 +489,7 @@ function FAQ() {
               </svg>
             </summary>
             <div className="faq-content">
-              We use <strong>Art19 (an Amazon company)</strong> for hosting and
-              monetization. You’ll get analytics, dynamic ad insertion, and
-              enterprise-grade delivery — no extra platform fees.
+              Art19. You get analytics, dynamic ad insertion, and reliable delivery with no extra platform fees.
             </div>
           </details>
 
@@ -520,8 +501,7 @@ function FAQ() {
               </svg>
             </summary>
             <div className="faq-content">
-              Not at all. We just ask for <strong>60 days’ notice</strong> so we can wrap
-              up any campaigns in progress. After that, you’re free to go.
+              No. We just ask for 60 days’ notice so we can wrap any campaigns, then you’re free to go.
             </div>
           </details>
 
@@ -533,8 +513,7 @@ function FAQ() {
               </svg>
             </summary>
             <div className="faq-content">
-              Payments go out <strong>every month, right on schedule</strong>.
-              No chasing, no surprises.
+              Every month on a regular schedule. No chasing. No surprises.
             </div>
           </details>
 
@@ -546,12 +525,7 @@ function FAQ() {
               </svg>
             </summary>
             <div className="faq-content">
-              It depends a little on your show. <br /><br />
-              <strong>Programmatic ads</strong> can start almost right away. <br />
-              <strong>Direct, host-read campaigns</strong> usually take a few weeks,
-              since we need to pitch your show and line up creative. <br /><br />
-              Either way, we’ll map your timeline during onboarding so you know
-              what to expect.
+              It depends on your show. Programmatic can start almost right away. Direct, host-read campaigns usually take a few weeks while we pitch and line up creative. We map your timeline during onboarding so you know what to expect.
             </div>
           </details>
 
@@ -563,9 +537,7 @@ function FAQ() {
               </svg>
             </summary>
             <div className="faq-content">
-              <a href="#contact" className="underline">Send us a quick intro</a>.
-              Tell us about your show, audience, and goals — we’ll get back with
-              next steps.
+              <a href="#contact" className="underline">Send a quick intro</a>. Tell us about your show, audience, and goals. We’ll reply with next steps.
             </div>
           </details>
         </div>
@@ -574,7 +546,7 @@ function FAQ() {
   );
 }
 
-/* ---------------- Contact (Formspree) ---------------- */
+/* ---------------- Contact ---------------- */
 function Contact() {
   const sent =
     typeof window !== "undefined" &&
@@ -589,7 +561,7 @@ function Contact() {
             Get in touch
           </h2>
           <p className="lead mt-3">
-            Tell us about your campaign or show. We’ll respond quickly.
+            Tell us about your campaign or show. We reply fast.
           </p>
           <p className="mt-4 text-sm text-ink-600">
             Prefer email?{" "}
@@ -604,7 +576,7 @@ function Contact() {
 
         {sent && (
           <div className="mt-6 mx-auto max-w-xl rounded-xl border border-black/10 bg-white p-4 text-sm text-ink-700 shadow-sm">
-            Thanks! Your message was sent — we’ll be in touch shortly.
+            Thanks. Your message was sent. We’ll be in touch shortly.
           </div>
         )}
 
