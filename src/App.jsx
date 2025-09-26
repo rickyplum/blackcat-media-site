@@ -309,7 +309,7 @@ function About() {
             </Feature>
 
             <Feature title="Pretty awesome & cool">
-              Independent, colorful, and human. We answer fast, ship quickly, and treat creators like partners—not inventory.
+              Independent, colorful, and human. We answer fast, work hard, and treat creators like partners—not inventory.
             </Feature>
           </div>
         </div>
