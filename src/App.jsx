@@ -8,6 +8,8 @@ const RESIDUE_EMBED_URL =
   "https://open.spotify.com/embed/show/69rVpBKK6Y8hMnYCCsfw1Y?utm_source=generator&theme=0"; // Residue
 const JANE_EMBED_URL =
   "https://open.spotify.com/embed/show/22CbW5HOVlWlZmNJhY7Nrz?utm_source=generator&theme=0"; // She Goes By Jane
+const GOODISH_GIRLS_EMBED_URL =
+  "https://open.spotify.com/embed/show/6eH1U2DJHxYBnPNSh3ObIM?utm_source=generator&theme=0"; // Good-ish Girls
 
 /* ---------- Hooks ---------- */
 function useParallax(mult = 0.06) {
@@ -211,6 +213,47 @@ function Shows() {
               <div className="mt-4">
                 <a
                   href="https://open.spotify.com/show/22CbW5HOVlWlZmNJhY7Nrz?si=9137352a53324ff7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  Listen on Spotify
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* Good-ish Girls */}
+          <article className="card overflow-hidden">
+            <div className="block block--mint p-0">
+              <img
+                src="/images/goodishgirls.jpg"
+                alt="Good-ish Girls"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold">Good-ish Girls</h3>
+              <p className="text-sm text-ink-600 mt-1">
+                Three friends dive into stories, laughs, and everything in between.
+              </p>
+
+              <div className="mt-4">
+                <iframe
+                  title="Spotify — Good-ish Girls (show)"
+                  src={GOODISH_GIRLS_EMBED_URL}
+                  className="embed"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="mt-4">
+                <a
+                  href="https://open.spotify.com/show/6eH1U2DJHxYBnPNSh3ObIM?si=a5ffd5e1aa3d430e"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
