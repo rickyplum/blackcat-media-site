@@ -10,6 +10,8 @@ const JANE_EMBED_URL =
   "https://open.spotify.com/embed/show/22CbW5HOVlWlZmNJhY7Nrz?utm_source=generator&theme=0"; // She Goes By Jane
 const GOODISH_GIRLS_EMBED_URL =
   "https://open.spotify.com/embed/show/6eH1U2DJHxYBnPNSh3ObIM?utm_source=generator&theme=0"; // Good-ish Girls
+const CREEPY_SHIT_EMBED_URL =
+  "https://open.spotify.com/embed/show/6KQXOXGNkmOJoXO01UOxnO?utm_source=generator&theme=0"; // Creepy Shit
 
 /* ---------- Hooks ---------- */
 function useParallax(mult = 0.06) {
@@ -51,7 +53,7 @@ function Header() {
           <a href="#how" className="hover:underline underline-offset-4">How it works</a>
           <a href="#join" className="hover:underline underline-offset-4">Join</a>
           <a href="#faq" className="hover:underline underline-offset-4">FAQ</a>
-          <a href="#contact" className="hover:underline underline-offset-4">Contact</a>
+          <a href="#contact" className="hover:underline underline-offset-4">Submit</a>
         </nav>
       </div>
     </header>
@@ -92,6 +94,7 @@ function Hero() {
 
         <div className="mt-8 flex flex-wrap gap-3 justify-center">
           <a href="#join" className="btn btn-primary">Join the Network</a>
+          <a href="#contact" className="btn btn-ghost">Submit Your Show</a>
         </div>
       </div>
     </section>
@@ -128,7 +131,6 @@ function Shows() {
               <p className="text-sm text-ink-600 mt-1">
                 Victim-focused true crime with Ashley and Ricky.
               </p>
-
               <div className="mt-4">
                 <iframe
                   title="Spotify — Crime Salad (show)"
@@ -141,14 +143,13 @@ function Shows() {
                   loading="lazy"
                 />
               </div>
-
               <div className="mt-4">
                 <a href="#contact" className="btn btn-primary">Advertise</a>
               </div>
             </div>
           </article>
 
-          {/* Residue: A True Crime Podcast */}
+          {/* Residue */}
           <article className="card overflow-hidden">
             <div className="block block--lilac p-0">
               <img
@@ -162,7 +163,6 @@ function Shows() {
               <p className="text-sm text-ink-600 mt-1">
                 What’s left behind after the headlines fade.
               </p>
-
               <div className="mt-4">
                 <iframe
                   title="Spotify — Residue (show)"
@@ -175,7 +175,6 @@ function Shows() {
                   loading="lazy"
                 />
               </div>
-
               <div className="mt-4">
                 <a href="#contact" className="btn btn-primary">Advertise</a>
               </div>
@@ -196,7 +195,6 @@ function Shows() {
               <p className="text-sm text-ink-600 mt-1">
                 Unresolved stories of missing and murdered women.
               </p>
-
               <div className="mt-4">
                 <iframe
                   title="Spotify — She Goes By Jane (show)"
@@ -209,7 +207,6 @@ function Shows() {
                   loading="lazy"
                 />
               </div>
-
               <div className="mt-4">
                 <a
                   href="https://open.spotify.com/show/22CbW5HOVlWlZmNJhY7Nrz?si=9137352a53324ff7"
@@ -237,7 +234,6 @@ function Shows() {
               <p className="text-sm text-ink-600 mt-1">
                 Three friends dive into stories, laughs, and everything in between.
               </p>
-
               <div className="mt-4">
                 <iframe
                   title="Spotify — Good-ish Girls (show)"
@@ -250,10 +246,48 @@ function Shows() {
                   loading="lazy"
                 />
               </div>
-
               <div className="mt-4">
                 <a
                   href="https://open.spotify.com/show/6eH1U2DJHxYBnPNSh3ObIM?si=a5ffd5e1aa3d430e"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  Listen on Spotify
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* Creepy Shit */}
+          <article className="card overflow-hidden">
+            <div className="block block--rose p-0">
+              <img
+                src="/images/creepyshit.jpg"
+                alt="Creepy Shit"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold">Creepy Shit</h3>
+              <p className="text-sm text-ink-600 mt-1">
+                True hauntings, folklore, and essential knowledge from the shadows.
+              </p>
+              <div className="mt-4">
+                <iframe
+                  title="Spotify — Creepy Shit (show)"
+                  src={CREEPY_SHIT_EMBED_URL}
+                  className="embed"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-4">
+                <a
+                  href="https://open.spotify.com/show/6KQXOXGNkmOJoXO01UOxnO?si=b903408a4f134b89"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
@@ -364,9 +398,7 @@ function Step({ n, title, children }) {
         </span>
         <h3 className="text-sm md:text-base font-semibold leading-tight">{title}</h3>
       </div>
-      <p className="mt-3 text-sm leading-relaxed text-ink-700">
-        {children}
-      </p>
+      <p className="mt-3 text-sm leading-relaxed text-ink-700">{children}</p>
     </div>
   );
 }
@@ -391,15 +423,12 @@ function HowItWorks() {
           <Step n="1" title="Host for free">
             We set you up on Art19 with analytics, dynamic ad controls, and your own login.
           </Step>
-
           <Step n="2" title="Turn on monetization">
             Start with programmatic ads so you earn while you grow.
           </Step>
-
           <Step n="3" title="Grow together">
             Cross-promos inside the network help new listeners find you.
           </Step>
-
           <Step n="4" title="Get support">
             We help with migrations, ad setup, best practices, and a private community space.
           </Step>
@@ -589,7 +618,7 @@ function FAQ() {
   );
 }
 
-/* ---------------- Contact ---------------- */
+/* ---------------- Contact (Creator submissions) ---------------- */
 function Contact() {
   const sent =
     typeof window !== "undefined" &&
@@ -599,27 +628,28 @@ function Contact() {
     <section id="contact" className="section">
       <div className="container-max">
         <header className="section-head">
-          <p className="kicker">Contact</p>
+          <p className="kicker">Submit Your Show</p>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 title-gradient">
-            Get in touch
+            Join BLACKCAT as a Creator
           </h2>
-          <p className="lead mt-3">
-            Tell us about your campaign or show. We reply fast.
-          </p>
-          <p className="mt-4 text-sm text-ink-600">
-            Prefer email?{" "}
-            <a
-              href="mailto:contact@blackcat.fm"
-              className="font-semibold underline underline-offset-4 hover:no-underline"
-            >
-              contact@blackcat.fm
-            </a>
-          </p>
         </header>
+
+        <p className="lead mt-3 text-center max-w-2xl mx-auto">
+          Tell us about your podcast. We review every submission and reply quickly with next steps.
+        </p>
+        <p className="mt-4 text-sm text-ink-600 text-center">
+          Prefer email?{" "}
+          <a
+            href="mailto:contact@blackcat.fm?subject=Show%20Submission%20to%20BLACKCAT"
+            className="font-semibold underline underline-offset-4 hover:no-underline"
+          >
+            contact@blackcat.fm
+          </a>
+        </p>
 
         {sent && (
           <div className="mt-6 mx-auto max-w-xl rounded-xl border border-black/10 bg-white p-4 text-sm text-ink-700 shadow-sm">
-            Thanks. Your message was sent. We’ll be in touch shortly.
+            Thanks! Your show submission was received. We’ll follow up shortly.
           </div>
         )}
 
@@ -636,38 +666,46 @@ function Contact() {
           />
           <input
             className="h-11 px-4 rounded-xl bg-white border border-black/10 shadow-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-black/20"
-            placeholder="Company"
-            name="company"
-          />
-          <input
-            className="h-11 px-4 rounded-xl bg-white border border-black/10 shadow-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-black/20"
             type="email"
             placeholder="Email"
             name="email"
             required
           />
+          <input
+            className="h-11 px-4 rounded-xl bg-white border border-black/10 shadow-sm"
+            placeholder="Show title"
+            name="show_title"
+            required
+          />
+          <input
+            className="h-11 px-4 rounded-xl bg-white border border-black/10 shadow-sm"
+            placeholder="Spotify/Apple link"
+            name="rss_or_link"
+            required
+          />
+          <input
+            className="h-11 px-4 rounded-xl bg-white border border-black/10 shadow-sm"
+            placeholder="Average monthly downloads (approx)"
+            name="downloads"
+          />
+          <input
+            className="h-11 px-4 rounded-xl bg-white border border-black/10 shadow-sm"
+            placeholder="Primary genre (e.g., True Crime, History)"
+            name="genre"
+          />
           <textarea
-            className="min-h-[120px] px-4 py-3 rounded-xl bg-white border border-black/10 shadow-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-black/20"
-            placeholder="What are you promoting? Or tell us about your show."
+            className="min-h-[140px] px-4 py-3 rounded-xl bg-white border border-black/10 shadow-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-black/20"
+            placeholder="Tell us about your audience, goals, and why BLACKCAT is a fit."
             name="message"
             required
           />
 
-          <input type="hidden" name="_subject" value="Blackcat Media Inquiry" />
+          <input type="hidden" name="_subject" value="Show Submission — BLACKCAT" />
           <input type="hidden" name="_redirect" value="https://blackcat.fm/#contact?sent=1" />
           <input type="text" name="_gotcha" className="hidden" tabIndex="-1" autoComplete="off" />
 
-          <button type="submit" className="btn btn-primary">Send</button>
+          <button type="submit" className="btn btn-primary">Submit Show</button>
         </form>
-
-        <div className="mt-6 text-center">
-          <a
-            href="mailto:contact@blackcat.fm?subject=Blackcat%20Media%20Inquiry&body=Hi%20Blackcat%20team,%0D%0A%0D%0A"
-            className="btn btn-ghost"
-          >
-            Email us directly
-          </a>
-        </div>
       </div>
     </section>
   );
