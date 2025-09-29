@@ -120,11 +120,8 @@ function Shows() {
           {/* Crime Salad */}
           <article className="card overflow-hidden">
             <div className="block block--lemon p-0">
-              <img
-                src="/images/crime-salad-art.png"
-                alt="Crime Salad"
-                className="w-full aspect-square object-cover rounded-3xl"
-              />
+              <img src="/images/crime-salad-art.png" alt="Crime Salad"
+                   className="w-full aspect-square object-cover rounded-3xl" />
             </div>
             <div className="p-5">
               <h3 className="text-lg font-semibold">Crime Salad</h3>
@@ -133,124 +130,18 @@ function Shows() {
               </p>
               <div className="mt-4">
                 <iframe
-                  title="Spotify — Crime Salad (show)"
+                  title="Spotify — Crime Salad"
                   src={SPOTIFY_EMBED_URL}
                   className="embed"
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
-              </div>
-              <div className="mt-4">
-                <a href="#contact" className="btn btn-primary">Advertise</a>
-              </div>
-            </div>
-          </article>
-
-          {/* Residue */}
-          <article className="card overflow-hidden">
-            <div className="block block--lilac p-0">
-              <img
-                src="/images/residue-art.png"
-                alt="Residue: A True Crime Podcast"
-                className="w-full aspect-square object-cover rounded-3xl"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="text-lg font-semibold">Residue: A True Crime Podcast</h3>
-              <p className="text-sm text-ink-600 mt-1">
-                What’s left behind after the headlines fade.
-              </p>
-              <div className="mt-4">
-                <iframe
-                  title="Spotify — Residue (show)"
-                  src={RESIDUE_EMBED_URL}
-                  className="embed"
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
-              </div>
-              <div className="mt-4">
-                <a href="#contact" className="btn btn-primary">Advertise</a>
-              </div>
-            </div>
-          </article>
-
-          {/* She Goes By Jane */}
-          <article className="card overflow-hidden">
-            <div className="block block--rose p-0">
-              <img
-                src="/images/she-goes-by-jane-art.jpg"
-                alt="She Goes By Jane"
-                className="w-full aspect-square object-cover rounded-3xl"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="text-lg font-semibold">She Goes By Jane</h3>
-              <p className="text-sm text-ink-600 mt-1">
-                Unresolved stories of missing and murdered women.
-              </p>
-              <div className="mt-4">
-                <iframe
-                  title="Spotify — She Goes By Jane (show)"
-                  src={JANE_EMBED_URL}
-                  className="embed"
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
+                  width="100%" height="352" frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 />
               </div>
               <div className="mt-4">
                 <a
-                  href="https://open.spotify.com/show/22CbW5HOVlWlZmNJhY7Nrz?si=9137352a53324ff7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                >
-                  Listen on Spotify
-                </a>
-              </div>
-            </div>
-          </article>
-
-          {/* Good-ish Girls */}
-          <article className="card overflow-hidden">
-            <div className="block block--mint p-0">
-              <img
-                src="/images/goodishgirls.jpg"
-                alt="Good-ish Girls"
-                className="w-full aspect-square object-cover rounded-3xl"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="text-lg font-semibold">Good-ish Girls</h3>
-              <p className="text-sm text-ink-600 mt-1">
-                Three friends dive into stories, laughs, and everything in between.
-              </p>
-              <div className="mt-4">
-                <iframe
-                  title="Spotify — Good-ish Girls (show)"
-                  src={GOODISH_GIRLS_EMBED_URL}
-                  className="embed"
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
-              </div>
-              <div className="mt-4">
-                <a
-                  href="https://open.spotify.com/show/6eH1U2DJHxYBnPNSh3ObIM?si=a5ffd5e1aa3d430e"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="https://open.spotify.com/show/3i7DxU0YyDnaMVdDrF4fpG"
+                  target="_blank" rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
                   Listen on Spotify
@@ -262,11 +153,8 @@ function Shows() {
           {/* Creepy Shit */}
           <article className="card overflow-hidden">
             <div className="block block--rose p-0">
-              <img
-                src="/images/creepyshit.jpg"
-                alt="Creepy Shit"
-                className="w-full aspect-square object-cover rounded-3xl"
-              />
+              <img src="/images/creepyshit.jpg" alt="Creepy Shit"
+                   className="w-full aspect-square object-cover rounded-3xl" />
             </div>
             <div className="p-5">
               <h3 className="text-lg font-semibold">Creepy Shit</h3>
@@ -275,21 +163,117 @@ function Shows() {
               </p>
               <div className="mt-4">
                 <iframe
-                  title="Spotify — Creepy Shit (show)"
+                  title="Spotify — Creepy Shit"
                   src={CREEPY_SHIT_EMBED_URL}
                   className="embed"
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
+                  width="100%" height="352" frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 />
               </div>
               <div className="mt-4">
                 <a
-                  href="https://open.spotify.com/show/6KQXOXGNkmOJoXO01UOxnO?si=b903408a4f134b89"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="https://open.spotify.com/show/6KQXOXGNkmOJoXO01UOxnO"
+                  target="_blank" rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  Listen on Spotify
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* Residue */}
+          <article className="card overflow-hidden">
+            <div className="block block--lilac p-0">
+              <img src="/images/residue-art.png" alt="Residue"
+                   className="w-full aspect-square object-cover rounded-3xl" />
+            </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold">Residue: A True Crime Podcast</h3>
+              <p className="text-sm text-ink-600 mt-1">
+                What’s left behind after the headlines fade.
+              </p>
+              <div className="mt-4">
+                <iframe
+                  title="Spotify — Residue"
+                  src={RESIDUE_EMBED_URL}
+                  className="embed"
+                  width="100%" height="352" frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-4">
+                <a
+                  href="https://open.spotify.com/show/69rVpBKK6Y8hMnYCCsfw1Y"
+                  target="_blank" rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  Listen on Spotify
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* She Goes By Jane */}
+          <article className="card overflow-hidden">
+            <div className="block block--rose p-0">
+              <img src="/images/she-goes-by-jane-art.jpg" alt="She Goes By Jane"
+                   className="w-full aspect-square object-cover rounded-3xl" />
+            </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold">She Goes By Jane</h3>
+              <p className="text-sm text-ink-600 mt-1">
+                Unresolved stories of missing and murdered women.
+              </p>
+              <div className="mt-4">
+                <iframe
+                  title="Spotify — She Goes By Jane"
+                  src={JANE_EMBED_URL}
+                  className="embed"
+                  width="100%" height="352" frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-4">
+                <a
+                  href="https://open.spotify.com/show/22CbW5HOVlWlZmNJhY7Nrz"
+                  target="_blank" rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  Listen on Spotify
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* Good-ish Girls */}
+          <article className="card overflow-hidden">
+            <div className="block block--mint p-0">
+              <img src="/images/goodishgirls.jpg" alt="Good-ish Girls"
+                   className="w-full aspect-square object-cover rounded-3xl" />
+            </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold">Good-ish Girls</h3>
+              <p className="text-sm text-ink-600 mt-1">
+                Three friends dive into stories, laughs, and everything in between.
+              </p>
+              <div className="mt-4">
+                <iframe
+                  title="Spotify — Good-ish Girls"
+                  src={GOODISH_GIRLS_EMBED_URL}
+                  className="embed"
+                  width="100%" height="352" frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-4">
+                <a
+                  href="https://open.spotify.com/show/6eH1U2DJHxYBnPNSh3ObIM"
+                  target="_blank" rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
                   Listen on Spotify
@@ -320,6 +304,25 @@ function Shows() {
     </section>
   );
 }
+
+
+                    {/* Work with us */}
+          <article className="card overflow-hidden">
+            <div className="block block--mint p-0">
+              <div className="aspect-square rounded-3xl bg-white/50 flex items-center justify-center text-lg font-semibold text-ink-600">
+                Join Us
+              </div>
+            </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold">Work with us</h3>
+              <p className="text-sm text-ink-600 mt-1">
+                Launch a podcast or move an existing show. Grow with BLACKCAT.
+              </p>
+              <div className="mt-4">
+                <a href="#join" className="btn btn-primary">Get in touch</a>
+              </div>
+            </div>
+          </article>
 
 /* ---------- Small helper for feature panels ---------- */
 function Feature({ title, children }) {
