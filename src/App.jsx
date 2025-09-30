@@ -4,14 +4,16 @@ import React, { useEffect, useRef, useState } from "react";
 /* ---------- Constants ---------- */
 const SPOTIFY_EMBED_URL =
   "https://open.spotify.com/embed/show/3i7DxU0YyDnaMVdDrF4fpG?utm_source=generator&theme=0"; // Crime Salad
+const CREEPY_SHIT_EMBED_URL =
+  "https://open.spotify.com/embed/show/6KQXOXGNkmOJoXO01UOxnO?utm_source=generator&theme=0"; // Creepy Shit
 const RESIDUE_EMBED_URL =
   "https://open.spotify.com/embed/show/69rVpBKK6Y8hMnYCCsfw1Y?utm_source=generator&theme=0"; // Residue
 const JANE_EMBED_URL =
   "https://open.spotify.com/embed/show/22CbW5HOVlWlZmNJhY7Nrz?utm_source=generator&theme=0"; // She Goes By Jane
 const GOODISH_GIRLS_EMBED_URL =
   "https://open.spotify.com/embed/show/6eH1U2DJHxYBnPNSh3ObIM?utm_source=generator&theme=0"; // Good-ish Girls
-const CREEPY_SHIT_EMBED_URL =
-  "https://open.spotify.com/embed/show/6KQXOXGNkmOJoXO01UOxnO?utm_source=generator&theme=0"; // Creepy Shit
+const MACABRE_EMBED_URL =
+  "https://open.spotify.com/embed/show/1xdn2q39kdOVYGAs96OmGd?utm_source=generator&theme=0"; // Macabre Mondays
 
 /* ---------- Hooks ---------- */
 function useParallax(mult = 0.06) {
@@ -117,11 +119,14 @@ function Shows() {
         </header>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {/* Crime Salad */}
+          {/* 1) Crime Salad */}
           <article className="card overflow-hidden">
             <div className="block block--lemon p-0">
-              <img src="/images/crime-salad-art.png" alt="Crime Salad"
-                   className="w-full aspect-square object-cover rounded-3xl" />
+              <img
+                src="/images/crime-salad-art.png"
+                alt="Crime Salad"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
             </div>
             <div className="p-5">
               <h3 className="text-lg font-semibold">Crime Salad</h3>
@@ -133,7 +138,9 @@ function Shows() {
                   title="Spotify — Crime Salad"
                   src={SPOTIFY_EMBED_URL}
                   className="embed"
-                  width="100%" height="352" frameBorder="0"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 />
@@ -141,7 +148,8 @@ function Shows() {
               <div className="mt-4">
                 <a
                   href="https://open.spotify.com/show/3i7DxU0YyDnaMVdDrF4fpG"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
                   Listen on Spotify
@@ -150,11 +158,53 @@ function Shows() {
             </div>
           </article>
 
-          {/* Creepy Shit */}
+          {/* 2) Macabre Mondays (moved here) */}
+          <article className="card overflow-hidden">
+            <div className="block block--lilac p-0">
+              <img
+                src="/images/macabre-mondays.png"
+                alt="Macabre Mondays"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold">Macabre Mondays</h3>
+              <p className="text-sm text-ink-600 mt-1">
+                True crime & paranormal dives with Alejandra and Thomas Bendel.
+              </p>
+              <div className="mt-4">
+                <iframe
+                  title="Spotify — Macabre Mondays"
+                  src={MACABRE_EMBED_URL}
+                  className="embed"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-4">
+                <a
+                  href="https://open.spotify.com/show/1xdn2q39kdOVYGAs96OmGd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  Listen on Spotify
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* 3) Creepy Shit */}
           <article className="card overflow-hidden">
             <div className="block block--rose p-0">
-              <img src="/images/creepyshit.jpg" alt="Creepy Shit"
-                   className="w-full aspect-square object-cover rounded-3xl" />
+              <img
+                src="/images/creepyshit.jpg"
+                alt="Creepy Shit"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
             </div>
             <div className="p-5">
               <h3 className="text-lg font-semibold">Creepy Shit</h3>
@@ -166,7 +216,9 @@ function Shows() {
                   title="Spotify — Creepy Shit"
                   src={CREEPY_SHIT_EMBED_URL}
                   className="embed"
-                  width="100%" height="352" frameBorder="0"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 />
@@ -174,7 +226,8 @@ function Shows() {
               <div className="mt-4">
                 <a
                   href="https://open.spotify.com/show/6KQXOXGNkmOJoXO01UOxnO"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
                   Listen on Spotify
@@ -183,11 +236,14 @@ function Shows() {
             </div>
           </article>
 
-          {/* Residue */}
+          {/* 4) Residue */}
           <article className="card overflow-hidden">
             <div className="block block--lilac p-0">
-              <img src="/images/residue-art.png" alt="Residue"
-                   className="w-full aspect-square object-cover rounded-3xl" />
+              <img
+                src="/images/residue-art.png"
+                alt="Residue: A True Crime Podcast"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
             </div>
             <div className="p-5">
               <h3 className="text-lg font-semibold">Residue: A True Crime Podcast</h3>
@@ -199,7 +255,9 @@ function Shows() {
                   title="Spotify — Residue"
                   src={RESIDUE_EMBED_URL}
                   className="embed"
-                  width="100%" height="352" frameBorder="0"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 />
@@ -207,7 +265,8 @@ function Shows() {
               <div className="mt-4">
                 <a
                   href="https://open.spotify.com/show/69rVpBKK6Y8hMnYCCsfw1Y"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
                   Listen on Spotify
@@ -216,11 +275,14 @@ function Shows() {
             </div>
           </article>
 
-          {/* She Goes By Jane */}
+          {/* 5) She Goes By Jane */}
           <article className="card overflow-hidden">
             <div className="block block--rose p-0">
-              <img src="/images/she-goes-by-jane-art.jpg" alt="She Goes By Jane"
-                   className="w-full aspect-square object-cover rounded-3xl" />
+              <img
+                src="/images/she-goes-by-jane-art.jpg"
+                alt="She Goes By Jane"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
             </div>
             <div className="p-5">
               <h3 className="text-lg font-semibold">She Goes By Jane</h3>
@@ -232,7 +294,9 @@ function Shows() {
                   title="Spotify — She Goes By Jane"
                   src={JANE_EMBED_URL}
                   className="embed"
-                  width="100%" height="352" frameBorder="0"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 />
@@ -240,7 +304,8 @@ function Shows() {
               <div className="mt-4">
                 <a
                   href="https://open.spotify.com/show/22CbW5HOVlWlZmNJhY7Nrz"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
                   Listen on Spotify
@@ -249,11 +314,14 @@ function Shows() {
             </div>
           </article>
 
-          {/* Good-ish Girls */}
+          {/* 6) Good-ish Girls */}
           <article className="card overflow-hidden">
             <div className="block block--mint p-0">
-              <img src="/images/goodishgirls.jpg" alt="Good-ish Girls"
-                   className="w-full aspect-square object-cover rounded-3xl" />
+              <img
+                src="/images/goodishgirls.jpg"
+                alt="Good-ish Girls"
+                className="w-full aspect-square object-cover rounded-3xl"
+              />
             </div>
             <div className="p-5">
               <h3 className="text-lg font-semibold">Good-ish Girls</h3>
@@ -265,7 +333,9 @@ function Shows() {
                   title="Spotify — Good-ish Girls"
                   src={GOODISH_GIRLS_EMBED_URL}
                   className="embed"
-                  width="100%" height="352" frameBorder="0"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 />
@@ -273,7 +343,8 @@ function Shows() {
               <div className="mt-4">
                 <a
                   href="https://open.spotify.com/show/6eH1U2DJHxYBnPNSh3ObIM"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
                   Listen on Spotify
@@ -282,7 +353,7 @@ function Shows() {
             </div>
           </article>
 
-          {/* Work with us */}
+          {/* 7) Work with us */}
           <article className="card overflow-hidden">
             <div className="block block--mint p-0">
               <div className="aspect-square rounded-3xl bg-white/50 flex items-center justify-center text-lg font-semibold text-ink-600">
@@ -304,25 +375,6 @@ function Shows() {
     </section>
   );
 }
-
-
-                    {/* Work with us */}
-          <article className="card overflow-hidden">
-            <div className="block block--mint p-0">
-              <div className="aspect-square rounded-3xl bg-white/50 flex items-center justify-center text-lg font-semibold text-ink-600">
-                Join Us
-              </div>
-            </div>
-            <div className="p-5">
-              <h3 className="text-lg font-semibold">Work with us</h3>
-              <p className="text-sm text-ink-600 mt-1">
-                Launch a podcast or move an existing show. Grow with BLACKCAT.
-              </p>
-              <div className="mt-4">
-                <a href="#join" className="btn btn-primary">Get in touch</a>
-              </div>
-            </div>
-          </article>
 
 /* ---------- Small helper for feature panels ---------- */
 function Feature({ title, children }) {
@@ -682,7 +734,7 @@ function Contact() {
           />
           <input
             className="h-11 px-4 rounded-xl bg-white border border-black/10 shadow-sm"
-            placeholder="Spotify/Apple link"
+            placeholder="RSS feed or Spotify/Apple link"
             name="rss_or_link"
             required
           />
