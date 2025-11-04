@@ -16,9 +16,8 @@ const MACABRE_EMBED_URL =
   "https://open.spotify.com/embed/show/1xdn2q39kdOVYGAs96OmGd?utm_source=generator&theme=0"; // Macabre Mondays
 const PERPLEXITY_EMBED_URL =
   "https://open.spotify.com/embed/show/70n0dtNlMtLhozhJes14mH?utm_source=generator&theme=0"; // Perplexity: A Mystery Podcast
-const KILL_ME_MAYBE_EMBED_URL =
-  "https://open.spotify.com/embed/show/24uFHOZwmPrvcZzP5gFVLw?utm_source=generator&theme=0"; // Kill Me Maybe
 
+  
 /* ---------- Data ---------- */
 const SHOWS = [
   {
@@ -91,16 +90,7 @@ const SHOWS = [
     link: "https://open.spotify.com/show/70n0dtNlMtLhozhJes14mH",
     blockClass: "block--purple",
   },
-  {
-    key: "kill-me-maybe",
-    title: "Kill Me Maybe",
-    desc: "A darkly funny true crime podcast that blends horror and humor.",
-    img: "/images/kill-me-maybe.jpeg",
-    alt: "Kill Me Maybe podcast cover art",
-    embed: KILL_ME_MAYBE_EMBED_URL,
-    link: "https://open.spotify.com/show/24uFHOZwmPrvcZzP5gFVLw",
-    blockClass: "block--crimson",
-  },
+
 ];
 
 /* ---------- Hooks ---------- */
