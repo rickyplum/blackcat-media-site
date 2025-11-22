@@ -16,8 +16,9 @@ const MACABRE_EMBED_URL =
   "https://open.spotify.com/embed/show/1xdn2q39kdOVYGAs96OmGd?utm_source=generator&theme=0"; // Macabre Mondays
 const PERPLEXITY_EMBED_URL =
   "https://open.spotify.com/embed/show/70n0dtNlMtLhozhJes14mH?utm_source=generator&theme=0"; // Perplexity: A Mystery Podcast
+const MORTAL_MUSINGS_EMBED_URL =
+  "https://open.spotify.com/embed/show/1PBSrJC7fsVfmLqvZCRpRW?utm_source=generator&theme=0"; // Mortal Musings
 
-  
 /* ---------- Data ---------- */
 const SHOWS = [
   {
@@ -31,9 +32,19 @@ const SHOWS = [
     blockClass: "block--lemon",
   },
   {
+    key: "mortal-musings",
+    title: "Mortal Musings",
+    desc: "Two skeleton hosts exploring death, mystery, and the strange side of existence.",
+    img: "/images/mortal_musings_podcast.png",
+    alt: "Mortal Musings podcast cover art",
+    embed: MORTAL_MUSINGS_EMBED_URL,
+    link: "https://open.spotify.com/show/1PBSrJC7fsVfmLqvZCRpRW",
+    blockClass: "block--purple",
+  },
+  {
     key: "macabre-mondays",
     title: "Macabre Mondays",
-    desc: "True crime & paranormal dives with Alejandra and Thomas Bendel.",
+    desc: "True crime and paranormal dives with Alejandra and Thomas Bendel.",
     img: "/images/macabre-mondays.png",
     alt: "Macabre Mondays podcast cover art",
     embed: MACABRE_EMBED_URL,
@@ -90,7 +101,6 @@ const SHOWS = [
     link: "https://open.spotify.com/show/70n0dtNlMtLhozhJes14mH",
     blockClass: "block--purple",
   },
-
 ];
 
 /* ---------- Hooks ---------- */
@@ -348,7 +358,7 @@ function About() {
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
             <Feature title="80% revenue to podcasters">
-              A better split than the usual big-network cut.
+              A better split than the usual big network cut.
             </Feature>
 
             <Feature title="Flexible 3-month agreements">
@@ -446,7 +456,7 @@ function Join() {
           <div className="rounded-2xl bg-white/95 ring-1 ring-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-6">
             <h3 className="text-lg font-semibold">What’s ahead</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-700">
-              We’re working toward originals and bigger sales partnerships. Today we’re focused on community, growth, and fair terms.
+              We are working toward originals and bigger sales partnerships. Today we are focused on community, growth, and fair terms.
             </p>
             <ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-ink-700 space-y-2 marker:text-ink-300">
               <li>Original productions on the roadmap.</li>
@@ -490,7 +500,7 @@ function FAQ() {
             Questions, answered
           </h2>
           <p className="lead mt-3">
-            Here’s the quick version of how BLACKCAT works with creators and partners.
+            Here is the quick version of how BLACKCAT works with creators and partners.
           </p>
         </header>
 
@@ -521,7 +531,7 @@ function FAQ() {
 
           <details className="faq-item group">
             <summary className="faq-summary">
-              <span>What’s BLACKCAT’s cut?</span>
+              <span>What is BLACKCAT’s cut?</span>
               <svg className="faq-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
@@ -551,7 +561,7 @@ function FAQ() {
               </svg>
             </summary>
             <div className="faq-content">
-              No. We just ask for 60 days’ notice so we can wrap any campaigns, then you’re free to go.
+              No. We just ask for 60 days notice so we can wrap any campaigns, then you are free to go.
             </div>
           </details>
 
@@ -587,7 +597,7 @@ function FAQ() {
               </svg>
             </summary>
             <div className="faq-content">
-              <a href="#contact" className="underline">Send a quick intro</a>. Tell us about your show, audience, and goals. We’ll reply with next steps.
+              <a href="#contact" className="underline">Send a quick intro</a>. Tell us about your show, audience, and goals. We will reply with next steps.
             </div>
           </details>
         </div>
@@ -627,7 +637,7 @@ function Contact() {
 
         {sent && (
           <div className="mt-6 mx-auto max-w-xl rounded-xl border border-black/10 bg-white p-4 text-sm text-ink-700 shadow-sm" role="status">
-            Thanks! Your show submission was received. We’ll follow up shortly.
+            Thanks! Your show submission was received. We will follow up shortly.
           </div>
         )}
 
@@ -689,7 +699,7 @@ function Contact() {
             placeholder="Primary genre (e.g., True Crime, History)"
             name="genre"
           />
-          <label className="sr-only" htmlFor="message">About your audience & goals</label>
+          <label className="sr-only" htmlFor="message">About your audience and goals</label>
           <textarea
             id="message"
             className="min-h-[140px] px-4 py-3 rounded-xl bg-white border border-black/10 shadow-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-black/20"
